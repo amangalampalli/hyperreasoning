@@ -29,9 +29,17 @@ scripts/serve/run_backend.py
 - `GET /health`
   - backend and LLM reachability summary
 - `POST /api/task/run`
-  - run a single task with one strategy (`random`, `heuristic`, or `rainbow`)
+  - run a single task with one strategy (`random`, `heuristic`, `rainbow`, or `oneshot`)
 - `POST /api/task/compare`
   - compare multiple strategies on the same task
+- `POST /api/task/run_async`
+  - start an async single-strategy run
+- `GET /api/task/run_async/{job_id}`
+  - poll task status, progress, result, and graph events
+- `POST /api/task/compare_async`
+  - start an async compare run
+- `GET /api/task/compare_async/{job_id}`
+  - poll compare status, progress, result, and graph events
 - `GET /api/runs`
   - list cached project runs from `.hyper/` and, when configured, Supabase metadata
 - `GET /api/runs/{run_id}`
@@ -101,10 +109,27 @@ plugin settings.
    - `Run Heuristic`
    - or `Run Rainbow`
 5. Show:
-   - candidate branches
-   - steps taken
+   - live candidate tree
+   - guided decision path
    - verifier outcomes
-   - final patch summary
+   - strategy ranking and final patch summary
+
+For the full walkthrough, see [Demo runbook](../DEMO_RUNBOOK.md).
+
+## Search Graph Events
+
+Async status responses include graph events and a cursor:
+
+```json
+{
+  "graph_events": [],
+  "graph_event_cursor": 12
+}
+```
+
+The plugin passes `graph_event_cursor` back on the next poll to receive only new graph events.
+
+See [Search graph event contract](../SEARCH_GRAPH_EVENTS.md).
 
 ## Run Command
 

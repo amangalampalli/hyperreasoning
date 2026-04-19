@@ -1,36 +1,75 @@
-# JetBrains Plugin Strategy
+# JetBrains Plugin
 
-The JetBrains plugin should focus on **inference-time use and visualization**,
-not training.
+The JetBrains plugin is the main task-time inference and visualization surface.
 
-## Intended Responsibilities
+It is responsible for:
 
-- accept a coding task inside the IDE
-- trigger DSL search / branch-control runs in the backend
-- visualize:
-  - candidate DSL branches
-  - selected actions
-  - verifier outcomes
-  - final patch
-- optionally compare heuristic vs Rainbow on the same task
+- collecting task context from the open IDE project
+- submitting backend task runs
+- streaming graph events during async jobs
+- rendering the search tree and guided decision path
+- showing verifier and strategy summaries
+- comparing Rainbow, heuristic, random, and one-shot strategies
 
-## Suggested Integration Strategy
-
-Phase 1:
-- task-oriented integration
-- trigger a backend search run for the current task through the local FastAPI backend
-- render the resulting task-local tree / verifier / patch outputs
-
-Phase 2:
-- optional local HTTP bridge for live backend communication and streaming updates
-
-## Scaffold Location
-
-The plugin scaffold lives under:
+## Location
 
 ```text
 jetbrains-plugin/
 ```
 
-This keeps the plugin and Python backend in the same repo for hackathon speed
-and easier synchronized iteration.
+## Current UI
+
+The tool window contains:
+
+- task prompt/context area
+- visible/hidden test toggles
+- strategy run buttons
+- backend health check
+- live progress card
+- result summary cards
+- `Search Graph` tab
+
+The search graph supports:
+
+- full tree view
+- guided decision timeline
+- node selection and details
+- pan/zoom
+- fit-to-view
+- expanded graph window
+- strategy switching after compare runs
+
+## Backend Integration
+
+The plugin talks to the local FastAPI backend:
+
+```text
+http://127.0.0.1:8765
+```
+
+Async runs stream graph events through job-status polling. See:
+
+- [Backend service](BACKEND.md)
+- [Search graph event contract](../SEARCH_GRAPH_EVENTS.md)
+
+## Demo
+
+Use the root demo runbook:
+
+```text
+docs/DEMO_RUNBOOK.md
+```
+
+## Build
+
+```bash
+cd jetbrains-plugin
+JAVA_HOME='/Applications/IntelliJ IDEA.app/Contents/jbr/Contents/Home' ./gradlew build
+```
+
+## Run Sandbox IDE
+
+```bash
+cd jetbrains-plugin
+JAVA_HOME='/Applications/IntelliJ IDEA.app/Contents/jbr/Contents/Home' ./gradlew runIde
+```
