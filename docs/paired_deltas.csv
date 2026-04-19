@@ -1,0 +1,13 @@
+baseline,metric,n_tasks,rainbow_mean,baseline_mean,mean_delta,ci_low,ci_high,p_value,test_name,rainbow_better_tasks,baseline_better_tasks,tied_tasks,summary
+heuristic,solved,10,0.800000,0.400000,0.400000,0.100000,0.700000,0.125000,Exact McNemar,4,0,6,"Rainbow improves solve rate by +0.40 (95% CI [0.10, 0.70], p=0.125) vs heuristic."
+heuristic,fraction_tests_passed,10,0.800000,0.400000,0.400000,0.175000,0.650000,0.031250,Exact paired sign-flip,6,0,4,"Rainbow improves mean fraction of tests passed by +0.40 (95% CI [0.17, 0.65], p=0.031) vs heuristic."
+heuristic,elapsed_time_ms,10,15353.240842,23143.534254,-7790.293413,-13756.012642,-2890.374754,0.003906,Exact paired sign-flip,9,1,0,"Rainbow reduces elapsed time by 7,790 ms (95% CI [2,890, 13,756] ms, p=0.004) vs heuristic."
+heuristic,llm_total_tokens,10,1694.500000,2339.600000,-645.100000,-1085.302500,-293.390000,0.001953,Exact paired sign-flip,10,0,0,"Rainbow reduces total tokens by 645 (95% CI [293, 1,085], p=0.002) vs heuristic."
+random,solved,10,0.800000,0.300000,0.500000,0.200000,0.800000,0.062500,Exact McNemar,5,0,5,"Rainbow improves solve rate by +0.50 (95% CI [0.20, 0.80], p=0.062) vs random."
+random,fraction_tests_passed,10,0.800000,0.375000,0.425000,0.200000,0.650000,0.015625,Exact paired sign-flip,7,0,3,"Rainbow improves mean fraction of tests passed by +0.42 (95% CI [0.20, 0.65], p=0.016) vs random."
+random,elapsed_time_ms,10,15353.240842,23009.353709,-7656.112867,-13435.041249,-2729.364172,0.007812,Exact paired sign-flip,9,1,0,"Rainbow reduces elapsed time by 7,656 ms (95% CI [2,729, 13,435] ms, p=0.008) vs random."
+random,llm_total_tokens,10,1694.500000,2342.000000,-647.500000,-1083.100000,-299.282500,0.001953,Exact paired sign-flip,10,0,0,"Rainbow reduces total tokens by 648 (95% CI [299, 1,083], p=0.002) vs random."
+one_shot,solved,10,0.800000,0.300000,0.500000,0.200000,0.800000,0.062500,Exact McNemar,5,0,5,"Rainbow improves solve rate by +0.50 (95% CI [0.20, 0.80], p=0.062) vs one shot."
+one_shot,fraction_tests_passed,10,0.800000,0.375000,0.425000,0.200000,0.650000,0.015625,Exact paired sign-flip,7,0,3,"Rainbow improves mean fraction of tests passed by +0.42 (95% CI [0.20, 0.65], p=0.016) vs one shot."
+one_shot,elapsed_time_ms,10,15353.240842,31015.692542,-15662.451700,-22966.883855,-8976.424738,0.001953,Exact paired sign-flip,10,0,0,"Rainbow reduces elapsed time by 15,662 ms (95% CI [8,976, 22,967] ms, p=0.002) vs one shot."
+one_shot,llm_total_tokens,10,1694.500000,3649.100000,-1954.600000,-2557.607500,-1442.895000,0.001953,Exact paired sign-flip,10,0,0,"Rainbow reduces total tokens by 1,955 (95% CI [1,443, 2,558], p=0.002) vs one shot."

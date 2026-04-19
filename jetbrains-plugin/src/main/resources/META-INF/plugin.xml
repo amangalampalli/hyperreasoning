@@ -1,0 +1,21 @@
+<idea-plugin>
+    <id>com.hyperreasoning.intellij</id>
+    <name>Hyperreasoning</name>
+    <vendor email="team@example.com">Hyperreasoning</vendor>
+
+    <description><![CDATA[
+    Tool window scaffold for task-time DSL search, verifier outcomes,
+    strategy comparison, and final patch visualization inside JetBrains IDEs.
+    ]]></description>
+
+    <depends>com.intellij.modules.platform</depends>
+
+    <extensions defaultExtensionNs="com.intellij">
+        <toolWindow
+                id="Hyperreasoning"
+                anchor="right"
+                factoryClass="com.hyperreasoning.intellij.toolwindow.HyperreasoningToolWindowFactory"
+                icon="/icons/hyperreasoningToolWindow.svg"
+                canCloseContents="false"/>
+    </extensions>
+</idea-plugin>

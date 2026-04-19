@@ -1,0 +1,35 @@
+{
+  "difficulty": "medium",
+  "entrypoint": "iterator_impl.py",
+  "family": "stateful_iterator_resume_bug",
+  "hidden_test_file": "tests/test_hidden.py",
+  "language": "python",
+  "metadata": {
+    "bug_type": [
+      "checkpoint drops the intra-group cursor position"
+    ],
+    "expected_skill_tags": [
+      "iterators",
+      "checkpointing",
+      "state",
+      "resume-logic"
+    ],
+    "family_version": "1.0",
+    "niche_topic": "flattened iterator checkpoint recovery",
+    "repairable": true,
+    "seed": 1080,
+    "strategy_traps": [
+      "Resuming at the start of a group duplicates data even when outer indices look correct",
+      "Iterator bugs show up after checkpoint/restore, not in a single uninterrupted pass"
+    ],
+    "target_files": [
+      "iterator_impl.py"
+    ]
+  },
+  "prompt": "`iterator_impl.py` contains a resumable iterator over grouped items. Fix checkpoint and restore behavior so resuming never duplicates or skips values and terminal state remains stable.",
+  "target_files": [
+    "iterator_impl.py"
+  ],
+  "task_id": "stateful_iterator_resume_bug_1080",
+  "visible_test_file": "test_visible.py"
+}

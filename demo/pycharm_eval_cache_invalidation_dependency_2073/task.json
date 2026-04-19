@@ -1,0 +1,35 @@
+{
+  "difficulty": "hard",
+  "entrypoint": "cache.py",
+  "family": "cache_invalidation_dependency",
+  "hidden_test_file": "tests/test_hidden.py",
+  "language": "python",
+  "metadata": {
+    "bug_type": [
+      "rule rewrites leave stale reverse dependencies behind"
+    ],
+    "expected_skill_tags": [
+      "graphs",
+      "cache-invalidation",
+      "incremental",
+      "state-management"
+    ],
+    "family_version": "1.0",
+    "niche_topic": "dependency-directed cache invalidation",
+    "repairable": true,
+    "seed": 2073,
+    "strategy_traps": [
+      "Transitive invalidation can look correct while stale reverse edges still trigger the wrong recomputations",
+      "Removing all cache entries globally hides the correctness bug but breaks incremental behavior"
+    ],
+    "target_files": [
+      "cache.py"
+    ]
+  },
+  "prompt": "Repair `DependencyCache` in `cache.py`. The cache tracks source values and derived nodes with dependencies. Updates must invalidate exactly the right downstream nodes, including transitive dependents, while keeping the reverse dependency graph consistent when rules change.",
+  "target_files": [
+    "cache.py"
+  ],
+  "task_id": "cache_invalidation_dependency_2073",
+  "visible_test_file": "test_visible.py"
+}

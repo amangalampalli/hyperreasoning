@@ -1,0 +1,35 @@
+{
+  "difficulty": "hard",
+  "entrypoint": "transform.py",
+  "family": "ast_transform_scope_bug",
+  "hidden_test_file": "tests/test_hidden.py",
+  "language": "python",
+  "metadata": {
+    "bug_type": [
+      "comprehension scopes are treated like surrounding module scope"
+    ],
+    "expected_skill_tags": [
+      "ast",
+      "scope-analysis",
+      "python-semantics",
+      "transformations"
+    ],
+    "family_version": "1.0",
+    "niche_topic": "scope-aware AST rewriting",
+    "repairable": true,
+    "seed": 2058,
+    "strategy_traps": [
+      "Function-level shadow tracking can still be wrong for comprehensions",
+      "The rename utility must preserve semantics, not just produce valid syntax"
+    ],
+    "target_files": [
+      "transform.py"
+    ]
+  },
+  "prompt": "`transform.py` contains a scope-aware AST rename utility. Fix `rename_global_binding` so it only renames references that still resolve to the module-level `shared_total` binding, including nested functions that capture it, while leaving shadowed bindings alone.",
+  "target_files": [
+    "transform.py"
+  ],
+  "task_id": "ast_transform_scope_bug_2058",
+  "visible_test_file": "test_visible.py"
+}

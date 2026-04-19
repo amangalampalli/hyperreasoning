@@ -1,0 +1,37 @@
+{
+  "difficulty": "medium",
+  "entrypoint": "api.py",
+  "family": "multi_file_interface_drift",
+  "hidden_test_file": "tests/test_hidden.py",
+  "language": "python",
+  "metadata": {
+    "bug_type": [
+      "api return keys drifted away from the documented client contract"
+    ],
+    "expected_skill_tags": [
+      "interfaces",
+      "multi-file",
+      "contracts",
+      "refactors"
+    ],
+    "family_version": "1.0",
+    "niche_topic": "post-refactor interface drift",
+    "repairable": true,
+    "seed": 4025,
+    "strategy_traps": [
+      "Fixing only one call site is insufficient because hidden tests hit the API directly",
+      "A compatibility shim must preserve the documented keys and defaults consistently"
+    ],
+    "target_files": [
+      "api.py",
+      "client.py"
+    ]
+  },
+  "prompt": "`api.py` and `client.py` drifted during a refactor. Restore one stable interface for `summarize_records` and the client helpers without changing the tests.",
+  "target_files": [
+    "api.py",
+    "client.py"
+  ],
+  "task_id": "multi_file_interface_drift_4025",
+  "visible_test_file": "test_visible.py"
+}

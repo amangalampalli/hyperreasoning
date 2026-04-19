@@ -1,0 +1,28 @@
+[tool.poetry]
+name = "hyperreasoning"
+version = "0.1.0"
+description = "A way to use statistics to make reasoning better."
+authors = ["Aditya Mangalampalli <aditya.mangalampalli@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = ">=3.11,<3.15"
+pytest = "^9.0.3"
+pydantic = "^2.12.5"
+orjson = "^3.11.8"
+httpx = "^0.28.1"
+tqdm = "^4.67.3"
+numpy = "^2.4.4"
+tyro = "^1.0.12"
+torch = "^2.11.0"
+tensorboard = "^2.20.0"
+torch-tb-profiler = "^0.4.3"
+fastapi = "^0.116.1"
+uvicorn = {version = "^0.35.0", extras = ["standard"]}
+supabase = ">=2.28,<3"
+python-dotenv = ">=1,<2"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

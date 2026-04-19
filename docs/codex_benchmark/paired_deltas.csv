@@ -1,0 +1,10 @@
+baseline,metric,n_tasks,rainbow_mean,baseline_mean,mean_delta,ci_low,ci_high,p_value,test_name,rainbow_better_tasks,baseline_better_tasks,tied_tasks,summary
+codex_5_4_low,solved,10,0.800000,0.800000,0.000000,-0.400000,0.400000,1.000000,Exact McNemar,2,2,6,
+codex_5_4_low,elapsed_time_ms,10,15353.240842,65865.847521,-50512.606679,-62008.714158,-40680.454208,0.001953,Exact paired sign-flip,10,0,0,
+codex_5_4_low,llm_total_tokens,10,1694.500000,243812.500000,-242118.000000,-287760.270000,-211537.412500,0.001953,Exact paired sign-flip,10,0,0,
+codex_5_4_medium,solved,10,0.800000,0.900000,-0.100000,-0.400000,0.200000,1.000000,Exact McNemar,1,2,7,
+codex_5_4_medium,elapsed_time_ms,10,15353.240842,79198.452188,-63845.211346,-79250.838017,-50452.932459,0.001953,Exact paired sign-flip,10,0,0,
+codex_5_4_medium,llm_total_tokens,10,1694.500000,264885.700000,-263191.200000,-299154.340000,-226710.972500,0.001953,Exact paired sign-flip,10,0,0,
+codex_5_4_high,solved,10,0.800000,1.000000,-0.200000,-0.500000,0.000000,0.500000,Exact McNemar,0,2,8,
+codex_5_4_high,elapsed_time_ms,10,15353.240842,93375.496783,-78022.255942,-95790.794338,-62805.252372,0.001953,Exact paired sign-flip,10,0,0,
+codex_5_4_high,llm_total_tokens,10,1694.500000,312123.900000,-310429.400000,-370629.800000,-259492.317500,0.001953,Exact paired sign-flip,10,0,0,
