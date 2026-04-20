@@ -76,7 +76,7 @@ Useful docs:
 - `jetbrains-plugin/` - native JetBrains plugin and search visualization UI
 - `env/` - search-control runtime, verifier integration, rewards, state encoder
 - `llm/` - DSL proposal, compiler, repair, and prompt utilities
-- `rl/` - Rainbow/C51 implementation
+- `rl/` - Rainbow/C51 implementation (https://arxiv.org/abs/1710.02298)
 - `models/` - neural network components
 - `data/` - task store, splits, transition schemas, replay dataset helpers
 - `scripts/` - data collection, training, eval, serving, and debug entrypoints
